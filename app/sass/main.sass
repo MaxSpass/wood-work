@@ -1,0 +1,46 @@
+@import 'mixin/mixins', 'mixin/normalize', 'mixin/variables';
+@import '../css/bootstrap-grid.min', '../css/font-awesome.min';
+
+body
+	box-sizing: border-box
+	font-size: 100%
+
+@font-face
+	font-family: Gilroy-Bold
+	src: url('../fonts/Gilroy-font/Gilroy-ExtraBold.ttf')
+
+header
+	background: $grey
+
+
+.header-inner
+	height: 60px
+	display: flex
+	flex-direction: row
+	justify-content: center
+	align-items: center
+
+.top-menu	
+	// height: 60px
+	// display: flex
+	// flex-direction: row
+	// justify-content: center
+	// align-items: center
+	li
+		list-style: none
+		display: inline-block
+		a
+			color: $txt-grey
+			text-decoration: none
+			text-transform: uppercase
+			font-family: Gilroy-Bold
+			font-size: .9em
+			&:hover, &.active
+				color: $green
+
+.cart-box
+	color: #fff
+	// display: flex
+	// float: right
+	// align-items: right
+	// align-self: flex-end
