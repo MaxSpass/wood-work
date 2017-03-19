@@ -13,8 +13,8 @@
    <body>
       <header>
          <div class="container">
-            <div class="header-inner">
-               <!-- <div class=""> -->
+            <div class="row header-inner">
+               <div class="col-sm-9 col-md-8">
                   <nav class="top-menu">
                      <ul>
                         <li><a href="">home</a></li>
@@ -24,15 +24,41 @@
                         <li><a href="">contacts</a></li>
                      </ul>
                   </nav>
-               <!-- </div> -->
-               <div class="cart-box">
-                  <span class="cart">
-                     <span class="product-count">2</span>
-                  </span>
+               </div>
+               <div class="col-sm-3 col-md-4">
+                  <div class="header-cart-box">
+                     <div class="cart">
+                        <a href="javascript:void(0)" class="product-count">2</a>
+                     </div>
+                     <div class="lang-switcher">
+                        <span class="active">en</span>
+                        <span>ua</span>
+                     </div>
+                  </div>
                </div>
             </div>
          </div>
       </header>
+
+      <main class="shopping-cart">
+         <section class="container-fluid">
+            <div class="row shoping-top">
+               <div class="col-sm-4">
+                  <div class="category-box">
+                     <a class="logo" href="javascript:void(0)">
+                        <img src="img/logo.png" alt="Our team">
+                     </a>
+                     <p class="category-name">lights</p>
+                     <h1 class="category-item">Air Lights</h1>
+                     <p class="category-desc">The Bliss Dining table is aptly named because we had so much fun designing it. And to see it finished is, well, just bliss!</p>
+                  </div>
+               </div>
+               <div class="col-sm-8">
+                  <img src="img/test/light.jpg" alt="Our lights">
+               </div>
+            </div>
+         </section>
+      </main>
 
 
       <script src="js/jquery-3.1.1.min.js"></script>

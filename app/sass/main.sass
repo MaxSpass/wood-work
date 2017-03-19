@@ -9,38 +9,130 @@ body
 	font-family: Gilroy-Bold
 	src: url('../fonts/Gilroy-font/Gilroy-ExtraBold.ttf')
 
+@font-face
+	font-family: Gilroy-SemiBold
+	src: url('../fonts/Gilroy-font/Gilroy-SemiBold.ttf')
+
 header
 	background: $grey
 
+.nop
+	padding-left: 0
+	padding-right: 0
 
+.row > div
+	@extend .nop
+	box-sizing: border-box
+
+
+// Menu
 .header-inner
-	height: 60px
+	// line-height: 60px
+	padding: 25px 0
+
+.top-menu
+
+	&:after
+		content: ''
+		display: table
+		width: 100%
+	ul
+		max-width: 600px
+		float: right
+		display: flex
+		flex-flow: row wrap
+		justify-content: space-between
+		// align-items: justify
+		// &:after
+		// 	content: ''
+		// 	display: table
+		// 	width: 100%
+		li
+			list-style: none
+			display: inline-block
+			margin-right: 60px
+			&:last-child
+				margin-right: 0
+			a
+				color: $txt-grey
+				text-decoration: none
+				text-transform: uppercase
+				font-family: $ff1
+				font-size: .9em
+				&:hover, &.active
+					color: $green
+
+// Cart
+.header-cart-box
 	display: flex
-	flex-direction: row
-	justify-content: center
-	align-items: center
+	flex-flow: row wrap
+	justify-content: flex-end
+	align-items: right
+	.cart
+		position: relative
+		padding-left: 15px
+		&:after
+			content: url("../img/cart-ico.png")
+		.product-count
+			@include absPosition(0,0,0,0)
+	.product-count
+		color: $green
+		font-weight: bold
+		font-size: 15px
+		text-decoration: none
 
-.top-menu	
-	// height: 60px
-	// display: flex
-	// flex-direction: row
-	// justify-content: center
-	// align-items: center
-	li
-		list-style: none
-		display: inline-block
-		a
-			color: $txt-grey
-			text-decoration: none
-			text-transform: uppercase
-			font-family: Gilroy-Bold
-			font-size: .9em
-			&:hover, &.active
-				color: $green
+// Lang-Switcher
+.lang-switcher
+	margin-left: 40px
+	color: $txt-grey
+	text-transform: uppercase
+	font-family: $ff1
+	font-size: .9em
+	span
+		cursor: pointer
+		&:hover
+			text-decoration: underline
+		&.active
+			display: none
 
-.cart-box
-	color: #fff
-	// display: flex
-	// float: right
-	// align-items: right
-	// align-self: flex-end
+// Shopping Cart
+.shopping-cart
+	background-color: $cart-bg
+	img
+		max-width: 100%
+		height: auto
+
+.shoping-top
+	position: relative
+
+.category-box
+	// padding: 90px 0 40px 0
+	// width: 280px
+	// display: table
+	padding: 40px 0
+	// padding-right: 15px
+	// float: rights
+	z-index: 1
+	@media screen and (max-width:767px)
+		@include absPosition(0,0,0,auto)
+	.logo img
+		display: block
+		margin: 0 auto
+	.category-name
+		color: $green
+		text-align: center
+		margin-top: 20px
+		text-transform: uppercase
+		letter-spacing: 1px
+		font-size: 12px
+		font-family: $ff2
+				
+@media screen and (max-width: 767px)
+	.category-box
+		.logo
+			float: left
+			max-width: 80px
+		.category-name
+			text-align: left
+		.category-desc
+			padding: 10px

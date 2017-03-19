@@ -3051,40 +3051,144 @@ body {
   font-family: Gilroy-Bold;
   src: url("../fonts/Gilroy-font/Gilroy-ExtraBold.ttf"); }
 
+@font-face {
+  font-family: Gilroy-SemiBold;
+  src: url("../fonts/Gilroy-font/Gilroy-SemiBold.ttf"); }
+
 header {
   background: #414141; }
 
+.nop, .row > div {
+  padding-left: 0;
+  padding-right: 0; }
+
+.row > div {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box; }
+
 .header-inner {
-  height: 60px;
+  padding: 25px 0; }
+
+.top-menu:after {
+  content: '';
+  display: table;
+  width: 100%; }
+
+.top-menu ul {
+  max-width: 600px;
+  float: right;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-  -webkit-flex-direction: row;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-      -ms-flex-align: center;
-          align-items: center; }
+  -webkit-flex-flow: row wrap;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between; }
+  .top-menu ul li {
+    list-style: none;
+    display: inline-block;
+    margin-right: 60px; }
+    .top-menu ul li:last-child {
+      margin-right: 0; }
+    .top-menu ul li a {
+      color: #b1b1b1;
+      text-decoration: none;
+      text-transform: uppercase;
+      font-family: Gilroy-Bold;
+      font-size: .9em; }
+      .top-menu ul li a:hover, .top-menu ul li a.active {
+        color: #81b260; }
 
-.top-menu li {
-  list-style: none;
-  display: inline-block; }
-  .top-menu li a {
-    color: #b1b1b1;
-    text-decoration: none;
+.header-cart-box {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-flow: row wrap;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: right;
+  -webkit-align-items: right;
+      -ms-flex-align: right;
+          align-items: right; }
+  .header-cart-box .cart {
+    position: relative;
+    padding-left: 15px; }
+    .header-cart-box .cart:after {
+      content: url("../img/cart-ico.png"); }
+    .header-cart-box .cart .product-count {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0; }
+  .header-cart-box .product-count {
+    color: #81b260;
+    font-weight: bold;
+    font-size: 15px;
+    text-decoration: none; }
+
+.lang-switcher {
+  margin-left: 40px;
+  color: #b1b1b1;
+  text-transform: uppercase;
+  font-family: Gilroy-Bold;
+  font-size: .9em; }
+  .lang-switcher span {
+    cursor: pointer; }
+    .lang-switcher span:hover {
+      text-decoration: underline; }
+    .lang-switcher span.active {
+      display: none; }
+
+.shopping-cart {
+  background-color: #f4f4f4; }
+  .shopping-cart img {
+    max-width: 100%;
+    height: auto; }
+
+.shoping-top {
+  position: relative; }
+
+.category-box {
+  padding: 40px 0;
+  z-index: 1; }
+  @media screen and (max-width: 767px) {
+    .category-box {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: auto; } }
+  .category-box .logo img {
+    display: block;
+    margin: 0 auto; }
+  .category-box .category-name {
+    color: #81b260;
+    text-align: center;
+    margin-top: 20px;
     text-transform: uppercase;
-    font-family: Gilroy-Bold;
-    font-size: .9em; }
-    .top-menu li a:hover, .top-menu li a.active {
-      color: #81b260; }
+    letter-spacing: 1px;
+    font-size: 12px;
+    font-family: Gilroy-SemiBold; }
 
-.cart-box {
-  color: #fff; }
+@media screen and (max-width: 767px) {
+  .category-box .logo {
+    float: left;
+    max-width: 80px; }
+  .category-box .category-name {
+    text-align: left; }
+  .category-box .category-desc {
+    padding: 10px; } }
