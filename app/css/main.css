@@ -3161,6 +3161,8 @@ header {
 
 .shoping-top {
   position: relative; }
+  .shoping-top img {
+    float: right; }
 
 .category-box {
   padding: 40px 0;
