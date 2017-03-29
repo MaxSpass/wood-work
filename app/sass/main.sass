@@ -13,6 +13,10 @@ body
 	font-family: Gilroy-SemiBold
 	src: url('../fonts/Gilroy-font/Gilroy-SemiBold.ttf')
 
+@font-face
+	font-family: Akrobat-Light
+	src: url('../fonts/akrobat/Akrobat-Light.otf')
+
 header
 	background: $grey
 
@@ -102,21 +106,35 @@ header
 		max-width: 100%
 		height: auto
 
-.shoping-top
+.product-top
 	position: relative
 	img
 		float: right
 
 .category-box
-	// padding: 90px 0 40px 0
-	// width: 280px
-	// display: table
-	padding: 40px 0
-	// padding-right: 15px
-	// float: rights
+	background-size: cover
+	padding: 4.5vw 2vw
+	box-sizing: border-box;
+	display: flex
+	flex-flow: column nowrap
+	justify-content: space-between
 	z-index: 1
-	@media screen and (max-width:767px)
-		@include absPosition(0,0,0,auto)
+	// @media screen and (min-width:1200px)
+	// 	padding: 75px 20px
+	// @media screen and (max-width:1199px)
+	// 	padding: 40px 15px
+	@media screen and (max-width:900px)
+		padding: 2vw 2vw
+	// @media screen and (max-width:767px)
+	// 	.category-box__inner1, .category-box__inner2
+	// 		align-self: center !important
+	.category-box__inner1
+		align-self: center
+	.category-box__inner2
+		max-width: 350px
+		align-self: flex-end
+		@media screen and (max-width:1550px)
+			align-self: center
 	.logo img
 		display: block
 		margin: 0 auto
@@ -126,9 +144,17 @@ header
 		margin-top: 20px
 		text-transform: uppercase
 		letter-spacing: 1px
-		font-size: 12px
-		font-family: $ff2
-				
+		font-size: 15px
+		font-family: $akrobat
+	.category-item
+		// font-size: 48px
+		@include fontsize(48)
+		font-family: $ff1
+	.category-desc
+		line-height: 24px
+		font-family: $akrobat
+		font-size: 18px
+
 @media screen and (max-width: 767px)
 	.category-box
 		.logo
@@ -138,3 +164,11 @@ header
 			text-align: left
 		.category-desc
 			padding: 10px
+
+.product-prop
+	display: flex
+	flex-direction: row
+	justify-content: center
+	line-height: 25px
+	font-family: $akrobat
+	font-size: 17px
