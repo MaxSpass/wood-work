@@ -3249,6 +3249,7 @@ header {
   -webkit-justify-content: center;
       -ms-flex-pack: center;
           justify-content: center;
+  background: #fff;
   line-height: 25px;
   font-family: Akrobat-Light, Helvetica, sans-serif;
   font-size: 17px; }
