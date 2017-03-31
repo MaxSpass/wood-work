@@ -3163,13 +3163,20 @@ header {
     max-width: 100%;
     height: auto; }
 
+.img-product-right img {
+  display: block;
+  margin: 0 auto; }
+
 .product-top {
   position: relative; }
   .product-top img {
     float: right; }
 
+#category-box {
+  background-position: center;
+  background-size: cover; }
+
 .category-box {
-  background-size: cover;
   padding: 4.5vw 2vw;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -3235,6 +3242,9 @@ header {
   .category-box .category-desc {
     padding: 10px; } }
 
+#product-desc {
+  overflow: hidden; }
+
 .product-prop {
   display: -webkit-box;
   display: -webkit-flex;
@@ -3252,4 +3262,41 @@ header {
   background: #fff;
   line-height: 25px;
   font-family: Akrobat-Light, Helvetica, sans-serif;
-  font-size: 17px; }
+  font-size: 17px;
+  padding: 2vw 0; }
+
+#img-product-center1 {
+  background-size: cover;
+  background-position: center; }
+  @media (min-width: 768px) and (max-width: 1150px) {
+    #img-product-center1 img {
+      display: none; } }
+
+@media screen and (min-width: 1199px) {
+  .product-container {
+    width: 1170px;
+    margin: 0 auto; } }
+
+.delivery-info {
+  background: #fff;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  height: 100%; }
+  .delivery-info ul {
+    margin-bottom: 10px; }
+    .delivery-info ul li {
+      position: relative;
+      text-indent: 15px;
+      line-height: 22px;
+      font-family: Akrobat-Light, Helvetica, sans-serif; }
+      .delivery-info ul li h3 {
+        font-family: Gilroy-Bold, Helvetica, sans-serif; }
+      .delivery-info ul li:before {
+        content: '';
+        width: 10px;
+        height: 10px;
+        background: #81b260;
+        display: inline-block;
+        margin-right: 10px;
+        -webkit-border-radius: 50%;
+                border-radius: 50%; }

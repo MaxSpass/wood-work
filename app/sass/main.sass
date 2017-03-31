@@ -106,28 +106,28 @@ header
 		max-width: 100%
 		height: auto
 
+.img-product-right img
+	display: block
+	margin: 0 auto
+
 .product-top
 	position: relative
 	img
 		float: right
 
-.category-box
+#category-box
+	background-position: center;
 	background-size: cover
+
+.category-box
 	padding: 4.5vw 2vw
 	box-sizing: border-box;
 	display: flex
 	flex-flow: column nowrap
 	justify-content: space-between
 	z-index: 1
-	// @media screen and (min-width:1200px)
-	// 	padding: 75px 20px
-	// @media screen and (max-width:1199px)
-	// 	padding: 40px 15px
 	@media screen and (max-width:900px)
 		padding: 2vw 2vw
-	// @media screen and (max-width:767px)
-	// 	.category-box__inner1, .category-box__inner2
-	// 		align-self: center !important
 	.category-box__inner1
 		align-self: center
 	.category-box__inner2
@@ -165,6 +165,9 @@ header
 		.category-desc
 			padding: 10px
 
+#product-desc
+	overflow: hidden
+
 .product-prop
 	display: flex
 	flex-direction: row
@@ -173,3 +176,52 @@ header
 	line-height: 25px
 	font-family: $akrobat
 	font-size: 17px
+	padding: 2vw 0
+
+#img-product-center1
+	background-size: cover
+	background-position: center;
+	img
+		@media (min-width:768px) and (max-width:1150px)
+			display: none
+	// @media (max-width:768px) and (min-width:1150px)
+	// 	background-image: none
+		
+// .test
+// 	display: flex
+// 	flex-direction: row
+// 	justify-content: center
+// 	@media screen and (max-width:767px)
+// 		flex-flow: column nowrap
+// 	&>div
+// 		padding-left: 0 !important
+// 		padding-right: 0 !important
+
+@media screen and (min-width: 1199px)
+	.product-container
+		width: 1170px
+		margin: 0 auto
+
+.delivery-info
+	background: #fff
+	// padding: 1vw  1.5vw
+	box-sizing: border-box
+	height: 100%
+	ul
+		margin-bottom: 10px
+		li
+			position: relative
+			// margin-left: 15px
+			text-indent: 15px
+			line-height: 22px
+			font-family: $akrobat
+			h3
+				font-family: $ff1
+			&:before
+				content: ''
+				width: 10px
+				height: 10px
+				background: #81b260
+				display: inline-block
+				margin-right: 10px
+				border-radius: 50%
