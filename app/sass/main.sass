@@ -24,9 +24,22 @@ header
 	padding-left: 0
 	padding-right: 0
 
+.img-responsive
+	max-width: 100%
+	height: auto
+
 .row > div
 	@extend .nop
 	box-sizing: border-box
+
+.container-fluid, .container, .row
+	box-sizing: border-box
+
+.clearfix
+	clear: both
+	&:after
+		content: ''
+		display: table
 
 
 // Menu
@@ -100,118 +113,104 @@ header
 			display: none
 
 // Shopping Cart
-.shopping-cart
-	background-color: $cart-bg
-	img
-		max-width: 100%
-		height: auto
+// .shopping-cart
+// 	background-color: $cart-bg
+// 	img
+// 		max-width: 100%
+// 		height: auto
 
-.img-product-right img
-	display: block
-	margin: 0 auto
+// .img-product-right img
+// 	display: block
+// 	margin: 0 auto
 
-.product-top
-	position: relative
-	img
-		float: right
+// .product-top
+// 	position: relative
+// 	img
+// 		float: right
 
-#category-box
-	background-position: center;
-	background-size: cover
+// #category-box
+// 	background-position: center;
+// 	background-size: cover
 
-.category-box
-	padding: 4.5vw 2vw
-	box-sizing: border-box;
-	display: flex
-	flex-flow: column nowrap
-	justify-content: space-between
-	z-index: 1
-	@media screen and (max-width:900px)
-		padding: 2vw 2vw
-	.category-box__inner1
-		align-self: center
-	.category-box__inner2
-		max-width: 350px
-		align-self: flex-end
-		@media screen and (max-width:1550px)
-			align-self: center
-	.logo img
-		display: block
-		margin: 0 auto
-	.category-name
-		color: $green
-		text-align: center
-		margin-top: 20px
-		text-transform: uppercase
-		letter-spacing: 1px
-		font-size: 15px
-		font-family: $akrobat
-	.category-item
-		// font-size: 48px
-		@include fontsize(48)
-		font-family: $ff1
-	.category-desc
-		line-height: 24px
-		font-family: $akrobat
-		font-size: 18px
+// .category-box
+// 	padding: 4.5vw 2vw
+// 	box-sizing: border-box;
+// 	display: flex
+// 	flex-flow: column nowrap
+// 	justify-content: space-between
+// 	z-index: 1
+// 	@media screen and (max-width:900px)
+// 		padding: 2vw 2vw
+// 	.category-box__inner1
+// 		align-self: center
+// 	.category-box__inner2
+// 		max-width: 350px
+// 		align-self: flex-end
+// 		@media screen and (max-width:1550px)
+// 			align-self: center
+// 	.logo img
+// 		display: block
+// 		margin: 0 auto
+// 	.category-name
+// 		color: $green
+// 		text-align: center
+// 		margin-top: 20px
+// 		text-transform: uppercase
+// 		letter-spacing: 1px
+// 		font-size: 15px
+// 		font-family: $akrobat
+// 	.category-item
+// 		// font-size: 48px
+// 		@include fontsize(48)
+// 		font-family: $ff1
+// 	.category-desc
+// 		line-height: 24px
+// 		font-family: $akrobat
+// 		font-size: 18px
 
-@media screen and (max-width: 767px)
-	.category-box
-		.logo
-			float: left
-			max-width: 80px
-		.category-name
-			text-align: left
-		.category-desc
-			padding: 10px
+// @media screen and (max-width: 767px)
+// 	.category-box
+// 		.logo
+// 			float: left
+// 			max-width: 80px
+// 		.category-name
+// 			text-align: left
+// 		.category-desc
+// 			padding: 10px
 
-#product-desc
-	overflow: hidden
+// #product-desc
+// 	overflow: hidden
 
-.product-prop
-	display: flex
-	flex-direction: row
-	justify-content: center
-	background: #fff
-	line-height: 25px
-	font-family: $akrobat
-	font-size: 17px
-	padding: 2vw 0
-
-#img-product-center1
-	background-size: cover
-	background-position: center;
-	img
-		@media (min-width:768px) and (max-width:1150px)
-			display: none
-	// @media (max-width:768px) and (min-width:1150px)
-	// 	background-image: none
-		
-// .test
+// .product-prop
 // 	display: flex
 // 	flex-direction: row
 // 	justify-content: center
-// 	@media screen and (max-width:767px)
-// 		flex-flow: column nowrap
-// 	&>div
-// 		padding-left: 0 !important
-// 		padding-right: 0 !important
+// 	background: #fff
+// 	line-height: 25px
+// 	font-family: $akrobat
+// 	font-size: 17px
+// 	padding: 2vw 0
 
-@media screen and (min-width: 1199px)
-	.product-container
-		width: 1170px
-		margin: 0 auto
+// #img-product-center1
+// 	background-size: cover
+// 	background-position: center;
+// 	img
+// 		@media (min-width:768px) and (max-width:1150px)
+// 			display: none
+
+// @media screen and (min-width: 1199px)
+// 	.product-container
+// 		width: 1170px
+// 		margin: 0 auto
 
 .delivery-info
 	background: #fff
-	// padding: 1vw  1.5vw
 	box-sizing: border-box
 	height: 100%
 	ul
 		margin-bottom: 10px
 		li
 			position: relative
-			// margin-left: 15px
 			text-indent: 15px
 			line-height: 22px
 			font-family: $akrobat
@@ -225,3 +224,84 @@ header
 				display: inline-block
 				margin-right: 10px
 				border-radius: 50%
+
+.product-container
+	background-color: pink
+	display: flex
+	flex-flow: row wrap
+	justify-content: space-between
+	align-items: flex-end
+	box-sizing: border-box
+	// align-items: center
+	&>div
+		box-sizing: border-box
+	&.product-top
+		align-items: center
+
+		// background-color: #fff
+	&.product-center
+		// align-items: stretch
+		.product-prop
+			padding: 115px
+		// #product-desc
+		// 	align-self: stretch
+		// 	height: 58%
+
+		// .product-prop-img
+		// 	align-self: stretch
+	&.author-box
+		// background-color: #fff
+	img
+		margin: 0 auto
+		display: block
+	.product-small, .product-big
+		// @extend .clearfix
+		// width: 100%
+		box-sizing: border-box
+		display: inline-block
+		// float: left
+	.product-small
+		width: 36%
+		background-color: #c9ffc9
+		// max-width: 690px - 25px
+	.product-big
+		width: 64%
+		background-color: #fbfbbf
+	@media screen and (max-width: 767px)
+		.product-small, .product-big
+			width: 100%
+
+		// max-width: 1230px - 25px
+
+
+.product-parallax
+	display: flex
+	flex-flow: row wrap
+	justify-content: flex-end
+	align-items: center
+	height: 550px
+	background-position: center center
+	background-attachment: fixed
+	background-repeat: no-repeat
+
+.author-desc-box
+	align-items: stretch
+	height: 50%
+.author-box
+	align-items: stretch
+
+	// display: flex
+	// flex-flow: column nowrap
+
+.product-prop
+	// height: 38%
+
+// .product-prop-img
+// 	align-items: stretch
+// 	height: 50%
+
+// .product-prop
+// 	flex-flow: row wrap
+// 	display: flex
+// 	align-items: flex-start
+// 	justify-content: flex-start
