@@ -1,0 +1,7 @@
+@media screen and (max-width: 991px) {
+  .product-parallax {
+    background-size: contain; } }
+
+@media screen and (max-width: 767px) {
+  .category-box {
+    margin: 0 auto; } }

@@ -3,12 +3,15 @@ $(document).ready(function(){
 		$('.lang-switcher span').toggleClass('active')
 		// $(this).show()
 	})
-
 })
 
 $(window).on('load resize',function(){
+	$.fn.hasAttr = function(name) {
+		return this.attr(name) !== undefined;
+	};
+
 	var resizeProduct = function() {
-		
+
 		// var windowWidth = $(window).width();
 
 		// var productContainerTop =  $('#img-inner-top').find('img').height();
@@ -57,5 +60,36 @@ $(window).on('load resize',function(){
 		// 		'height':deliveryInfoHeight
 		// 	})
 		// }
+
+	}();
+
+	var coverParent = function(){
+		$('.product-container').each(function(){
+				var parentHeight = $(this).height();
+				var childImg = $(this).find($('[data-cover-parent=1] img').parent());
+				var childImgSrc = childImg.find('img').attr('src');
+
+			if ($(this).hasAttr('data-cover-parent') && $(this).attr('data-cover-parent') == 0) {
+				if (childImg.height() !== parentHeight) {
+
+				childImg.find('img').hide()
+
+				childImg.css({
+					'background-image':'url('+childImgSrc+')',
+					'height': parentHeight
+				})
+
+				}else {
+					childImg.removeAttr('style').find('img').show()
+			}
+
+console.log(parentHeight)
+console.log(childImg.find('img').height())
+
+
+			} 
+		})
+
+
 	}();
 })

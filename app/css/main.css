@@ -3215,7 +3215,8 @@ header {
       -ms-flex-align: end;
           align-items: flex-end;
   -webkit-box-sizing: border-box;
-          box-sizing: border-box; }
+          box-sizing: border-box;
+  background-size: cover; }
   .product-container > div {
     -webkit-box-sizing: border-box;
             box-sizing: border-box; }
@@ -3224,8 +3225,8 @@ header {
     -webkit-align-items: center;
         -ms-flex-align: center;
             align-items: center; }
-  .product-container.product-center .product-prop {
-    padding: 115px; }
+  .product-container.product-center {
+    background: purple; }
   .product-container img {
     margin: 0 auto;
     display: block; }
@@ -3234,10 +3235,33 @@ header {
             box-sizing: border-box;
     display: inline-block; }
   .product-container .product-small {
-    width: 36%;
+    width: 37%;
     background-color: #c9ffc9; }
+    .product-container .product-small .category-box {
+      max-width: 300px;
+      margin-left: auto;
+      padding: 25px; }
+      .product-container .product-small .category-box .category-box__inner1 {
+        margin-bottom: 7vw; }
+      .product-container .product-small .category-box .category-name {
+        color: #81b260;
+        text-align: center;
+        margin-top: 20px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-size: 15px;
+        font-family: Akrobat-Light, Helvetica, sans-serif; }
+      .product-container .product-small .category-box .category-item {
+        font-size: 48px;
+        font-size: 3em;
+        font-family: Gilroy-Bold, Helvetica, sans-serif;
+        margin-bottom: 20px; }
+      .product-container .product-small .category-box .category-desc {
+        line-height: 24px;
+        font-family: Akrobat-Light, Helvetica, sans-serif;
+        font-size: 18px; }
   .product-container .product-big {
-    width: 64%;
+    width: 63%;
     background-color: #fbfbbf; }
   @media screen and (max-width: 767px) {
     .product-container .product-small, .product-container .product-big {
@@ -3262,9 +3286,10 @@ header {
       -ms-flex-align: center;
           align-items: center;
   height: 550px;
-  background-position: center center;
+  background-position: center;
   background-attachment: fixed;
-  background-repeat: no-repeat; }
+  background-repeat: no-repeat;
+  background-size: cover; }
 
 .author-desc-box {
   -webkit-box-align: stretch;
@@ -3274,7 +3299,7 @@ header {
   height: 50%; }
 
 .author-box {
-  -webkit-box-align: stretch;
-  -webkit-align-items: stretch;
-      -ms-flex-align: stretch;
-          align-items: stretch; }
+  -webkit-box-align: end;
+  -webkit-align-items: flex-end;
+      -ms-flex-align: end;
+          align-items: flex-end; }

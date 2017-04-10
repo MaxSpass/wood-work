@@ -232,23 +232,27 @@ header
 	justify-content: space-between
 	align-items: flex-end
 	box-sizing: border-box
+
+	background-size: cover
 	// align-items: center
 	&>div
 		box-sizing: border-box
 	&.product-top
 		align-items: center
-
 		// background-color: #fff
-	&.product-center
-		// align-items: stretch
-		.product-prop
-			padding: 115px
+	// &.product-center
+	// 	background: green !important
+	// 	align-content: space-between
+	// &.product-big
+	// 	align-content: stretch
+	// 	align-items: stretch
 		// #product-desc
-		// 	align-self: stretch
+			// align-self: flex-start
 		// 	height: 58%
-
 		// .product-prop-img
 		// 	align-self: stretch
+	&.product-center
+		background: purple
 	&.author-box
 		// background-color: #fff
 	img
@@ -261,11 +265,32 @@ header
 		display: inline-block
 		// float: left
 	.product-small
-		width: 36%
+		width: 37%
 		background-color: #c9ffc9
-		// max-width: 690px - 25px
+		.category-box
+			max-width: 300px
+			margin-left: auto
+			padding: 25px
+			.category-box__inner1
+				margin-bottom: 7vw
+			.category-name
+				color: $green
+				text-align: center
+				margin-top: 20px
+				text-transform: uppercase
+				letter-spacing: 1px
+				font-size: 15px
+				font-family: $akrobat
+			.category-item
+				@include fontsize(48)
+				font-family: $ff1
+				margin-bottom: 20px
+			.category-desc
+				line-height: 24px
+				font-family: $akrobat
+				font-size: 18px
 	.product-big
-		width: 64%
+		width: 63%
 		background-color: #fbfbbf
 	@media screen and (max-width: 767px)
 		.product-small, .product-big
@@ -280,15 +305,16 @@ header
 	justify-content: flex-end
 	align-items: center
 	height: 550px
-	background-position: center center
+	background-position: center
 	background-attachment: fixed
 	background-repeat: no-repeat
+	background-size: cover
 
 .author-desc-box
 	align-items: stretch
 	height: 50%
 .author-box
-	align-items: stretch
+	align-items: flex-end
 
 	// display: flex
 	// flex-flow: column nowrap
