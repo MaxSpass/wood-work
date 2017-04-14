@@ -17,6 +17,10 @@ body
 	font-family: Akrobat-Light
 	src: url('../fonts/akrobat/Akrobat-Light.otf')
 
+@font-face
+	font-family: Akrobat-Bold
+	src: url('../fonts/akrobat/Akrobat-Bold.otf')
+
 header
 	background: $grey
 
@@ -40,7 +44,28 @@ header
 	&:after
 		content: ''
 		display: table
-
+.btn-style
+	background: $green
+	border-radius: 40px
+	box-sizing: border-box
+	border: 2px solid transparent
+	color: #fff
+	display: table
+	min-width: 230px
+	margin: 0 auto
+	padding: 15px 10px
+	transition: all .3s ease
+	text-align: center
+	
+	
+	text-decoration: none
+	font-family: $akrobat-bold
+	font-size: 25px
+	&:hover
+		color: $green
+		background: #fff
+		border-color: $green
+		text-decoration: none
 
 // Menu
 .header-inner
@@ -48,22 +73,13 @@ header
 	padding: 25px 0
 
 .top-menu
-
-	&:after
-		content: ''
-		display: table
-		width: 100%
+	@extend .clearfix
 	ul
 		max-width: 600px
 		float: right
 		display: flex
 		flex-flow: row wrap
 		justify-content: space-between
-		// align-items: justify
-		// &:after
-		// 	content: ''
-		// 	display: table
-		// 	width: 100%
 		li
 			list-style: none
 			display: inline-block
@@ -72,12 +88,24 @@ header
 				margin-right: 0
 			a
 				color: $txt-grey
+				outline: none
 				text-decoration: none
 				text-transform: uppercase
 				font-family: $ff1
 				font-size: .9em
+				position: relative
+				&:before
+					@include absPosition(auto,0,0,0)
+					content: ''
+					margin: 0 auto
+					width: 0%
+					height: 1px
+					background: $green
+					transition: all .2s ease-in-out
 				&:hover, &.active
 					color: $green
+				&:hover:before
+					width: 100%
 
 // Cart
 .header-cart-box
@@ -181,16 +209,6 @@ header
 // #product-desc
 // 	overflow: hidden
 
-// .product-prop
-// 	display: flex
-// 	flex-direction: row
-// 	justify-content: center
-// 	background: #fff
-// 	line-height: 25px
-// 	font-family: $akrobat
-// 	font-size: 17px
-// 	padding: 2vw 0
-
 // #img-product-center1
 // 	background-size: cover
 // 	background-position: center;
@@ -205,17 +223,24 @@ header
 
 .delivery-info
 	background: #fff
+	padding: 30px 0
 	box-sizing: border-box
 	height: 100%
+	&__inner
+		max-width: 400px
+		margin-left: 5vw
+		// margin: 20px auto 20px 5vw
+	h1,h2,h3,h4,h5
+		font-family: $akrobat-bold
+		font-size: 26px
 	ul
 		margin-bottom: 10px
 		li
 			position: relative
 			text-indent: 15px
-			line-height: 22px
+			font-size: 20px
+			line-height: 26px
 			font-family: $akrobat
-			h3
-				font-family: $ff1
 			&:before
 				content: ''
 				width: 10px
@@ -226,7 +251,8 @@ header
 				border-radius: 50%
 
 .product-container
-	background-color: pink
+	// background-color: pink
+	background-color: #f4f4f4
 	display: flex
 	flex-flow: row wrap
 	justify-content: space-between
@@ -239,8 +265,10 @@ header
 		box-sizing: border-box
 	&.product-top
 		align-items: center
+		background-color: #f4f4f4
 		// background-color: #fff
-	// &.product-center
+	&.product-center
+		background: #fff
 	// 	background: green !important
 	// 	align-content: space-between
 	// &.product-big
@@ -252,7 +280,7 @@ header
 		// .product-prop-img
 		// 	align-self: stretch
 	&.product-center
-		background: purple
+		// background: purple
 	&.author-box
 		// background-color: #fff
 	img
@@ -266,7 +294,7 @@ header
 		// float: left
 	.product-small
 		width: 36%
-		background-color: #c9ffc9
+		// background-color: #c9ffc9
 		.category-box
 			max-width: 300px
 			margin-left: auto
@@ -279,10 +307,10 @@ header
 				margin-top: 20px
 				text-transform: uppercase
 				letter-spacing: 1px
-				font-size: 15px
-				font-family: $akrobat
+				font-size: 17px
+				font-family: $akrobat-bold
 			.category-item
-				@include fontsize(48)
+				@include fontsize(56)
 				font-family: $ff1
 				margin-bottom: 20px
 			.category-desc
@@ -291,43 +319,205 @@ header
 				font-size: 18px
 	.product-big
 		width: 64%
-		background-color: #fbfbbf
 	@media screen and (max-width: 767px)
 		.product-small, .product-big
 			width: 100%
 
 		// max-width: 1230px - 25px
 
+.product-prop
+	display: flex
+	flex-direction: row
+	justify-content: center
+	background: #fff
+	line-height: 26px
+	font-family: $akrobat
+	font-size: 19px
+	padding: 4vw
+	ul
+		width: 100%
+		max-width: 650px
+		li
+			line-height: 25px
+			&:after
+				content: ''
+				display: block
+				width: 100%
+				border-bottom: 1px dotted #000
+			span.dp, span.dr
+				position: relative
+				&:after
+					content: ''
+					display: block
+					width: 100%
+					position: absolute
+					bottom: -2px
+					left: 0
+					height: 2px
+					background: #fff
+					// border: 1px solid purple
+			span.dr
+				float: right
+				margin-left: 50px
+				&:after
+					bottom: -1px
+
+					// border-bottom: 2px solid red
 
 .product-parallax
 	display: flex
 	flex-flow: row wrap
 	justify-content: flex-end
 	align-items: center
-	height: 550px
+	height: 500px
 	background-position: center
 	background-attachment: fixed
 	background-repeat: no-repeat
 	background-size: cover
+	.parallax-name
+		max-width: 400px
+		margin-right: 16vw
+		@include fontsize(42)
+		font-family: $ff1
+	.parallax-product-desc
+		margin-top: 10px
+		line-height: 24px
+		font-family: $akrobat-bold
+		font-size: 23px
 
 .author-desc-box
-	align-items: stretch
-	height: 50%
+	max-width: 600px
+	margin-right: 8vw
+	margin-bottom: 5vw
+	float: right
+	.author-project
+		@include fontsize(44)
+		font-family: $ff1
+		margin-bottom: 2vw
+	.author-name
+		font-size: 24px
+		font-family: $ff2
+	.author-desc
+		font-family: $akrobat
+		text-align: justify
+		font-size: 19px
+	// align-items: stretch
+	// height: 50%
 .author-box
-	align-items: flex-end
+	background: #fff
+	// align-items: flex-end
 
 	// display: flex
 	// flex-flow: column nowrap
+.buy-box
+	display: table
+	margin: 7vw auto
+	text-align: center
+	.price
+		@include fontsize(55)
+		font-family: $ff1
+	.buy-btn
+		@extend .btn-style
+		margin: 50px auto
 
-.product-prop
-	// height: 38%
+.social-widget
+	text-align: center
+	background: rgba(0,0,0,.5)
+	color: #fff
+	padding: 10px
 
-// .product-prop-img
-// 	align-items: stretch
-// 	height: 50%
 
-// .product-prop
-// 	flex-flow: row wrap
-// 	display: flex
-// 	align-items: flex-start
-// 	justify-content: flex-start
+.last-box
+	max-width: 1200px
+	margin: 0 auto
+	.advice-look
+		@include fontsize(55)
+		font-family: $ff1
+		text-align: center
+		margin-bottom: 4vw
+	.btn-readmore
+		@extend .btn-style
+		margin: 60px auto
+.last-products
+	margin: 0 auto
+	.last-product-item
+		width: 300px
+		margin-bottom: 15px
+		border: 1px solid #000
+		border-radius: 15px
+		box-sizing: border-box
+		overflow: hidden
+		.last-product-img
+			width: 300px
+			max-width: $masonry-item-width
+			height: auto
+		.last-product-price
+			@include absPosition(auto,35px,35px,auto)
+			background: $green
+			color: #fff
+			border-radius: 50px
+			width: 80px
+			height: 80px
+			line-height: 80px
+			text-align: center
+			@include fontsize(30)
+			font-family: $ff1
+
+// Footer
+
+footer.footer
+	padding: 5vw 0
+	background: #444
+
+.footer-inner-2
+	.footer-menu-main 
+		li
+			line-height: 34px
+			a
+				font-family: $ff2
+				letter-spacing: 1px
+				color: #fff
+				text-transform: uppercase
+				text-decoration: none
+				padding: 1px 3px
+				font-size: 18px
+				vertical-align: sub
+				&:hover
+					background: #fff
+					color: #444
+
+.footer-inner-3
+	.footer-menu-category
+		li
+			line-height: 34px
+			a
+				color: #adadad
+				text-decoration: none
+				transition: all .2s ease-in
+				font-size: 20px
+				font-family: $akrobat
+				&:hover
+					color: #fff
+					text-decoration: underline
+
+.footer-inner-4
+	.follow-us
+		text-transform: uppercase
+		color: #fff
+		font-size: 18px
+		font-family: $ff1
+		line-height: 34px
+	.soc-box
+		li
+			line-height: 34px
+			a
+				color: #adadad
+				font-family: $ff2
+				font-size: 18px
+				transition: all .2s ease-in
+				text-decoration: none
+				vertical-align: sub
+				&:hover
+					color: $green
+
+
