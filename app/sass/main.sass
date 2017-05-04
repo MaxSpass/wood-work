@@ -86,6 +86,9 @@ header
 			margin-right: 60px
 			&:last-child
 				margin-right: 0
+			&.current_page_item
+				a
+					color: $green
 			a
 				color: $txt-grey
 				outline: none
@@ -428,7 +431,7 @@ header
 
 
 .last-box
-	max-width: 1200px
+	max-width: $masonry-item-width * 3 + 60
 	margin: 0 auto
 	.advice-look
 		@include fontsize(55)
@@ -442,7 +445,7 @@ header
 	margin: 0 auto
 	.last-product-item
 		width: 300px
-		margin-bottom: 15px
+		margin-bottom: 30px
 		border: 1px solid #000
 		border-radius: 15px
 		box-sizing: border-box

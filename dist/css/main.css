@@ -3434,7 +3434,7 @@ header {
   padding: 10px; }
 
 .last-box {
-  max-width: 960px;
+  max-width: 1200px;
   margin: 0 auto; }
   .last-box .advice-look {
     font-size: 55px;
@@ -3458,7 +3458,7 @@ header {
     overflow: hidden; }
     .last-products .last-product-item .last-product-img {
       width: 300px;
-      max-width: 300px;
+      max-width: 360px;
       height: auto; }
     .last-products .last-product-item .last-product-price {
       position: absolute;
